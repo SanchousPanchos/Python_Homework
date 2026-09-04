@@ -1,0 +1,6 @@
+list1 = set(map(int, input("Введите первый список: ").split()))
+list2 = set(map(int, input("Введите второй список: ").split()))
+
+common_numbers = list1 & list2
+
+print(len(common_numbers))

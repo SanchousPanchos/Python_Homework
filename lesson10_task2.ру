@@ -1,0 +1,6 @@
+my_dict = {}
+
+for number in range(10, -6, -1):
+    my_dict[number] = number ** number
+
+print(my_dict)

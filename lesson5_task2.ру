@@ -1,0 +1,41 @@
+word = input("Введите слово: ")
+
+vowels = "aeiou"
+
+vowel_count = 0
+consonant_count = 0
+
+a_count = 0
+e_count = 0
+i_count = 0
+o_count = 0
+u_count = 0
+
+for letter in word:
+    if letter in vowels:
+        vowel_count += 1
+
+        if letter == "a":
+            a_count += 1
+        elif letter == "e":
+            e_count += 1
+        elif letter == "i":
+            i_count += 1
+        elif letter == "o":
+            o_count += 1
+        elif letter == "u":
+            u_count += 1
+    else:
+        consonant_count += 1
+
+print("Количество гласных:", vowel_count)
+print("Количество согласных:", consonant_count)
+
+print("a:", a_count)
+print("e:", e_count)
+print("i:", i_count)
+print("o:", o_count)
+print("u:", u_count)
+
+if a_count == 0 or e_count == 0 or i_count == 0 or o_count == 0 or u_count == 0:
+    print(False)

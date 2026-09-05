@@ -1,0 +1,47 @@
+import math
+
+class Turtle:
+    def __init__(self, x: int, y: int, s: int):
+        self.x = x
+        self.y = y
+        self.s = s
+
+    def go_up(self):
+        self.y += self.s
+
+    def go_down(self):
+        self.y -= self.s
+
+    def go_left(self):
+        self.x -= self.s
+
+    def go_right(self):
+        self.x += self.s
+
+    def evolve(self):
+        self.s += 1
+
+    def degrade(self):
+        if self.s - 1 <= 0:
+            raise ValueError("Шаг (s) не может быть меньше или равен 0!")
+        self.s -= 1
+
+    def count_moves(self, x2: int, y2: int) -> int:
+        delta_x = abs(x2 - self.x)
+        delta_y = abs(y2 - self.y)
+
+        moves_x = math.ceil(delta_x / self.s)
+        moves_y = math.ceil(delta_y / self.s)
+
+        return moves_x + moves_y
+
+# Проверка работы класса
+t = Turtle(x=0, y=0, s=2)
+
+t.go_right()
+t.go_up()
+t.evolve()
+
+print("Позиция:", t.x, t.y)
+print("Шаг:", t.s)
+print("Количество ходов:", t.count_moves(10, 8))

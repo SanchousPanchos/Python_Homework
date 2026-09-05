@@ -1,0 +1,25 @@
+class Cash:
+    def __init__(self):
+        self.amount = 0
+
+    def top_up(self, X):
+        self.amount += X
+
+    def count_1000(self):
+        return self.amount // 1000
+
+    def take_away(self, X):
+        if X > self.amount:
+            raise ValueError("Недостаточно денег в кассе")
+        self.amount -= X
+
+cash = Cash()
+
+cash.top_up(5500)
+
+print("Количество целых тысяч:", cash.count_1000())
+
+cash.take_away(2500)
+
+print("Осталось денег:", cash.amount)
+print("Количество целых тысяч:", cash.count_1000())

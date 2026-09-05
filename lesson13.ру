@@ -1,0 +1,47 @@
+import random
+
+def create_matrix(rows, columns):
+    matrix = []
+
+    for i in range(rows):
+        row = []
+
+        for j in range(columns):
+            row.append(random.randint(-100, 100))
+
+        matrix.append(row)
+
+    return matrix
+
+def add_matrices(matrix_1, matrix_2):
+    matrix_3 = []
+
+    for i in range(len(matrix_1)):
+        row = []
+
+        for j in range(len(matrix_1[i])):
+            row.append(matrix_1[i][j] + matrix_2[i][j])
+
+        matrix_3.append(row)
+
+    return matrix_3
+
+rows = int(input("Введите количество строк: "))
+columns = int(input("Введите количество столбцов: "))
+
+matrix_1 = create_matrix(rows, columns)
+matrix_2 = create_matrix(rows, columns)
+
+matrix_3 = add_matrices(matrix_1, matrix_2)
+
+print("Матрица 1:")
+for row in matrix_1:
+    print(row)
+
+print("Матрица 2:")
+for row in matrix_2:
+    print(row)
+
+print("Сумма матриц:")
+for row in matrix_3:
+    print(row)
